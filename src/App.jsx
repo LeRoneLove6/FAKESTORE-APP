@@ -9,7 +9,7 @@ import Checkout from './components/Checkout';
 import OrderHistory from './components/OrderHistory';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// ✅ Corrected AuthProvider import path
+
 import { AuthProvider } from './AuthContext';
 
 function App() {
