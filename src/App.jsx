@@ -6,9 +6,11 @@ import ProductDetails from './components/ProductDetails';
 import ProductList from './components/ProductList';
 import AddProduct from './components/AddProduct';
 import Checkout from './components/Checkout';
-import OrderHistory from './components/OrderHistory'; // 👈 new
+import OrderHistory from './components/OrderHistory';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { AuthProvider } from './auth/AuthProvider'; // 👈 ensure AuthProvider is properly set
+
+// ✅ Corrected AuthProvider import path
+import { AuthProvider } from './AuthContext';
 
 function App() {
   return (
@@ -20,8 +22,8 @@ function App() {
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/checkout" element={<Checkout />} /> {/* 👈 new */}
-          <Route path="/orders" element={<OrderHistory />} /> {/* 👈 new */}
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/orders" element={<OrderHistory />} />
         </Routes>
       </AuthProvider>
     </Router>
