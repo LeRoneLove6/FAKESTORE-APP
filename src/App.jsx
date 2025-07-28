@@ -13,9 +13,10 @@ import UserProfile from "./components/UserProfile";
 import EditProfile from "./components/EditProfile";
 import DeleteAccount from "./components/DeleteAccount";
 import ImportProducts from './components/ImportProducts';
+import { AuthProvider } from './AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { AuthProvider } from './AuthContext';
+
 
 function App() {
   return (
