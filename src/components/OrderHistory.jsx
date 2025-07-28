@@ -27,22 +27,34 @@ const OrderHistory = () => {
     fetchOrders();
   }, []);
 
+  const formatCurrency = (amount) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(amount);
+
   return (
-    <div>
+    <div className="container mt-4">
       <h2>Your Order History</h2>
       {orders.length === 0 ? (
         <p>No orders yet.</p>
       ) : (
-        <ul>
+        <ul className="list-group">
           {orders.map((order) => (
-            <li key={order.id}>
-              <strong>Order ID:</strong> {order.id}<br />
-              <strong>Date:</strong> {order.createdAt?.toDate().toLocaleString()}<br />
-              <strong>Total:</strong> ${order.totalPrice.toFixed(2)}
+            <li key={order.id} className="list-group-item">
+              <p>
+                <strong>Order ID:</strong> {order.id}<br />
+                <strong>Date:</strong>{" "}
+                {order.createdAt && order.createdAt.toDate
+                  ? order.createdAt.toDate().toLocaleString()
+                  : "Unknown"}<br />
+                <strong>Total:</strong> {formatCurrency(order.totalPrice)}
+              </p>
+
               <ul>
                 {order.items.map((item, index) => (
                   <li key={index}>
-                    {item.title} - ${item.price} × {item.quantity}
+                    {item.title} - {formatCurrency(item.price)} × {item.quantity}
                   </li>
                 ))}
               </ul>

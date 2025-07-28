@@ -7,9 +7,14 @@ import ProductList from './components/ProductList';
 import AddProduct from './components/AddProduct';
 import Checkout from './components/Checkout';
 import OrderHistory from './components/OrderHistory';
+import Register from "./components/Register";
+import Login from "./components/Login"; 
+import UserProfile from "./components/UserProfile";
+import EditProfile from "./components/EditProfile";
+import DeleteAccount from "./components/DeleteAccount";
+import ImportProducts from './components/ImportProducts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// ✅ Corrected AuthProvider import path
 import { AuthProvider } from './AuthContext';
 
 function App() {
@@ -24,6 +29,12 @@ function App() {
           <Route path="/addproduct" element={<AddProduct />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/orders" element={<OrderHistory />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/import" element={<ImportProducts />} />
         </Routes>
       </AuthProvider>
     </Router>

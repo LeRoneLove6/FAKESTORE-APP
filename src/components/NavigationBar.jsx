@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavigationBar () {
@@ -14,6 +15,7 @@ function NavigationBar () {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
             <Nav.Link href="/addproduct">Add Product</Nav.Link>
+            <Nav.Link as={Link} to="/import">Import Products</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
